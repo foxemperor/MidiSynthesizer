@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MidiSynth": {
+      "commandName": "Project"
+    },
+    "MidiSynthesizer": {
+      "commandName": "Project"
+    }
+  }
+}

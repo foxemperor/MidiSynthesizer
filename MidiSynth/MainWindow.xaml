@@ -1,0 +1,91 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MidiSynthesizer"
+        xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="MidiSynthesizer.MainWindow"
+        mc:Ignorable="d" Height="390" Width="1270" MinWidth="1260" MinHeight="380" Title="Midi Synthesizer">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="1260">
+        <TabControl Margin="0,0,10,0">
+            <TabItem Header="Клавиатура" KeyDown="KeyDownEventHandler" KeyUp="KeyUpEventHandler">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF522D65" Height="340" Width="1240">
+                    <Label Content="Выбор инструмента:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="White" Background="White"/>
+                    <Button Content="C4" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="47,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="#FFF9F9F9">
+                        <Button.Style>
+                            <Style/>
+                        </Button.Style>
+                    </Button>
+                    <Button Content="D4" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="117,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="C4#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="93,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="E4" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="187,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="D4#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="163,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="F4" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="257,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="G4" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="327,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="F4#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="303,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="A4" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="397,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="G4#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="372,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="B4" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="467,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="A4#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="442,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="C5" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="537,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button x:Name="RecordButton" Click ="RecordButtonClick" Content="Начать запись" HorizontalAlignment="Left" Margin="938,10,0,0" VerticalAlignment="Top" Height="24" Width="122" Background="White"/>
+                    <Button x:Name="OpenSerializedButton" Click="OpenSerializedButtonClick" Content="Открыть и воспроизвести..." HorizontalAlignment="Left" Margin="1065,10,0,0" VerticalAlignment="Top" Height="24" Width="165" Background="White"/>
+                    <ComboBox x:Name="PatchComboBox" SelectionChanged="PatchComboBoxSelected" HorizontalAlignment="Left" Margin="137,12,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop Color="#FFF0F0F0"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                        <System:String>Пианино</System:String>
+                        <System:String>Электропианино</System:String>
+                        <System:String>Рок-орган</System:String>
+                        <System:String>Ксилофон</System:String>
+                        <System:String>Гитара</System:String>
+                        <System:String>Бас-гитара</System:String>
+                        <System:String>Скрипка</System:String>
+                        <System:String>Флейта</System:String>
+                        <System:String>Ocarina</System:String>
+                    </ComboBox>
+                    <Button Content="D5" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="607,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="C5#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="583,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="E5" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="677,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="D5#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="653,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="F5" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="747,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="G5" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="817,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="F5#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="793,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="A5" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="887,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="G5#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="862,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="B5" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="957,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Button Content="A5#" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="932,89,0,0" VerticalAlignment="Top" Height="114" Width="48" Background="#FF0C0000" Foreground="White"/>
+                    <Button Content="C6" Click="PianoButtonClick" HorizontalAlignment="Left" Margin="1027,89,0,0" VerticalAlignment="Top" Height="200" Width="70" Background="White"/>
+                    <Label Content="S" HorizontalAlignment="Left" Margin="108,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                    <Label Content="D" HorizontalAlignment="Left" Margin="178,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                    <Label Content="Z" HorizontalAlignment="Left" Margin="71,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="X" HorizontalAlignment="Left" Margin="143,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="C" HorizontalAlignment="Left" Margin="213,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="V" HorizontalAlignment="Left" Margin="283,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="B" HorizontalAlignment="Left" Margin="353,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="N" HorizontalAlignment="Left" Margin="423,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="M" HorizontalAlignment="Left" Margin="493,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="21" Height="26"/>
+                    <Label Content="Q" HorizontalAlignment="Left" Margin="563,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="W" HorizontalAlignment="Left" Margin="633,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="21" Height="26"/>
+                    <Label Content="E" HorizontalAlignment="Left" Margin="703,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="R" HorizontalAlignment="Left" Margin="773,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="T" HorizontalAlignment="Left" Margin="843,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="Y" HorizontalAlignment="Left" Margin="913,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="U" HorizontalAlignment="Left" Margin="983,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="I" HorizontalAlignment="Left" Margin="1053,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18" Height="26"/>
+                    <Label Content="G" HorizontalAlignment="Left" Margin="318,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                    <Label Content="H" HorizontalAlignment="Left" Margin="387,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                    <Label Content="J" HorizontalAlignment="Left" Margin="457,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                    <Label Content="2" HorizontalAlignment="Left" Margin="598,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                    <Label Content="3" HorizontalAlignment="Left" Margin="668,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                    <Label Content="5" HorizontalAlignment="Left" Margin="808,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                    <Label Content="6" HorizontalAlignment="Left" Margin="877,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                    <Label Content="7" HorizontalAlignment="Left" Margin="947,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.542" BorderBrush="#FFBFBBBB" Background="White" Width="18"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
